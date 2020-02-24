@@ -4,6 +4,25 @@ const path = require('path')
 const eol = require('eol')
 const MsgReader = require('@kenjiuno/msgreader').default
 
+const lang = 'en'  // Available options: de, en
+
+const i18n = {
+  de: {
+    sender: 'Absender',
+    receiver: 'Empfänger',
+    date: 'Datum',
+    subject: 'Betreff',
+    message: 'nachricht',
+  },
+  en: {
+    sender: 'Sender',
+    receiver: 'Receiver',
+    date: 'Date',
+    subject: 'Subject',
+    message: 'message',
+  },
+}
+
 
 if (process.argv.length !== 3) {
   throw new Error('You must specify the file to convert!')
@@ -33,10 +52,10 @@ const dateFormatted = date
 
 
 let message =
-  'Absender: ' + headers.From + '\n' +
-  'Empfänger: ' + headers.To + '\n' +
-  'Datum: ' + dateFormatted + ' UTC\n' +
-  'Betreff: ' + testMsgInfo.subject + '\n' +
+  i18n[lang].sender + ': ' + headers.From + '\n' +
+  i18n[lang].receiver + ': ' + headers.To + '\n' +
+  i18n[lang].date + ': ' + dateFormatted + ' UTC\n' +
+  i18n[lang].subject + ': ' + testMsgInfo.subject + '\n' +
   '\n'
 
 message += testMsgInfo.body + '\n'
@@ -52,7 +71,7 @@ const directory = path.join(
 fs.mkdirSync(directory)
 
 fs.writeFileSync(
-  path.join(directory, 'nachricht.txt'),
+  path.join(directory, `${i18n[lang].message}.txt`),
   message,
   {encoding: 'utf-8'}
 )
