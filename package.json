@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@kenjiuno/msgreader": "^1.2.5",
+    "eol": "^0.9.1"
+  },
+  "devDependencies": {
+    "pkg": "^4.4.3"
+  }
+}
