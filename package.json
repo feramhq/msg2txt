@@ -1,4 +1,8 @@
 {
+  "name": "msg2txt",
+  "version": "0.0.0",
+  "main": "index.js",
+  "bin": "cli.js",
   "dependencies": {
     "@kenjiuno/msgreader": "^1.2.5",
     "eol": "^0.9.1"
