@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "main": "index.js",
   "bin": "cli.js",
+  "scripts": {
+    "test": "rm -rf email && ./cli.js email.msg"
+  },
   "dependencies": {
     "@kenjiuno/msgreader": "^1.2.5",
     "eol": "^0.9.1"
