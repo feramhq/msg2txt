@@ -52,12 +52,7 @@ function getNumericOffset (zone, now) {
 }
 
 
-function main () {
-  if (process.argv.length !== 3) {
-    throw new Error('You must specify the file to convert!')
-  }
-
-  const filename = process.argv[2]
+function main (filename) {
 
   if (!filename.endsWith('.msg')) {
     throw new Error('Only .msg files can be converted!')

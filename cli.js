@@ -2,4 +2,10 @@
 
 const msg2txt = require('./index.js')
 
-msg2txt()
+
+if (process.argv.length !== 3) {
+  throw new Error('You must specify the file to convert!')
+}
+
+msg2txt(process.argv[2])
+
